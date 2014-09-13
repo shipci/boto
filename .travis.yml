@@ -12,5 +12,5 @@ before_install:
 
 install:
   - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then travis_retry pip install -r requirements-py26.txt; fi
-  - travis_retry pip install -r requirements.txt
+  - shippable_retry pip install -r requirements.txt
 script: python tests/test.py default
