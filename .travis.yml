@@ -20,6 +20,8 @@ install:
   
 script: 
 #- python tests/test.py default
-  - nosetests tests/unit/*/*.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch tests/unit/*/*.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml tests/unit/*/*.py
+  - nosetests tests/integration/*/*.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+  - which python && coverage run --branch tests/integration/*/*.py
+  - which python && coverage xml -o shippable/codecoverage/coverage.xml tests/integration/*/*.py
+
+archive: true
