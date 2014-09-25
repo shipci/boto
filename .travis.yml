@@ -2,8 +2,8 @@ language: python
 python:
   #- "2.6"
   #- "2.7"
-  #- "3.3"
-  - "3.4"
+  - "3.3"
+  #- "3.4"
   #- "pypy"
 before_install:
   - shippable_retry sudo apt-get update
