@@ -3,7 +3,7 @@ python:
   #- "2.6"
   #- "2.7"
   - "3.3"
-  #- "3.4"
+  - "3.4"
   #- "pypy"
 before_install:
   - shippable_retry sudo apt-get update
@@ -20,10 +20,11 @@ install:
   
 script: 
 #- python tests/test.py default
-  - nosetests tests/integration/*/*.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch tests/integration/*/*.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml tests/integration/*/*.py
+  - nosetests tests/unit/*/*.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+  - which python && coverage run --branch tests/unit/*/*.py
+  - which python && coverage xml -o shippable/codecoverage/coverage.xml tests/unit/*/*.py
 
 archive: true
 
 
+parallelized_test: true
