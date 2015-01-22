@@ -1,5 +1,5 @@
 language: python
-build_image: shippable/minv2:beta 
+#build_image: shippable/minv2:beta 
 python:
   #- "2.6"
   #- "2.7"
@@ -22,10 +22,9 @@ install:
   
 script: 
 #- python tests/test.py default
-  - nosetests tests/integration/*/*.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch tests/integration/*/*.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml tests/integration/*/*.py
-
+  - python tests/test.py default --with-coverage --cover-package=tests --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+  - coverage xml -o shippable/codecoverage/coverage.xml 
+ 
 archive: true
 
 
