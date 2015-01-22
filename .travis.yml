@@ -22,12 +22,12 @@ install:
   
 script: 
 #- python tests/test.py default
- # - nosetests tests/integration/*/*.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  #- which python && coverage run --branch tests/integration/*/*.py
-  #- which python && coverage xml -o shippable/codecoverage/coverage.xml tests/integration/*/*.py
+  - nosetests tests/integration/*/*.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+  - which python && coverage run --branch tests/integration/*/*.py
+  - which python && coverage xml -o shippable/codecoverage/coverage.xml tests/integration/*/*.py
 
-  - python tests/integration/*/*.py  --with-coverage --cover-package=tests --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - coverage xml -o shippable/codecoverage/coverage.xml 
+ # - python tests/integration/*/*.py  --with-coverage --cover-package=tests --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+  #- coverage xml -o shippable/codecoverage/coverage.xml 
  
 archive: true
 
