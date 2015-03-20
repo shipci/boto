@@ -7,6 +7,10 @@ python:
  # - "3.4"
   #- "pypy"
 
+env:
+ - FOO=bar
+ - BAR=foo
+ 
 before_install:
   - shippable_retry sudo apt-get update
   - shippable_retry sudo apt-get --reinstall install -qq language-pack-en language-pack-de
