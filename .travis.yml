@@ -7,9 +7,9 @@ python:
  # - "3.4"
   #- "pypy"
 
-env:
- - FOO=bar
- - BAR=foo
+#env:
+ #- FOO=bar
+ #- BAR=foo
  
 before_install:
   - shippable_retry sudo apt-get update
