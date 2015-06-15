@@ -35,7 +35,6 @@ script:
  
 archive: true
 
-
 parallelized_test: true
 
 cache: true 
